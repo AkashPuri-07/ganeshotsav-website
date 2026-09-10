@@ -18,7 +18,7 @@ export default function Gallery() {
         {photos.length === 0 ? (
           <p className="mt-4 font-sans text-ink/70">Coming soon.</p>
         ) : (
-          <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-2 items-start gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
             {photos.map((photo, index) => (
               <div
                 key={photo}
