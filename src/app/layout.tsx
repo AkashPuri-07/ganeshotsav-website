@@ -13,10 +13,39 @@ const karla = Karla({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://belgaumbhagyavidhata.com";
+const SITE_TITLE = "Belgaum cha Bhagyavidhata — Sarvajanik Shri Ganesh Utsav Mandal";
+const SITE_DESCRIPTION =
+  "Sarvajanik Shri Ganesh Utsav Mandal, Angol, Belgaum — celebrating Ganeshotsav since 1978. Daily updates, live aarti, gallery, and more for the 2026 festival (Sept 14–25).";
+
 export const metadata: Metadata = {
-  title: "Sarvajanik Shri Ganesh Utsav Mandal",
-  description:
-    "Sarvajanik Shri Ganesh Utsav Mandal, Angol, Belgaum — Ganeshotsav 2026",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  keywords: [
+    "Bhagyavidhata",
+    "Belgaum",
+    "Belagavi",
+    "Ganeshotsav",
+    "Angol",
+    "Sarvajanik Shri Ganesh Utsav Mandal",
+    "Ganesh Chaturthi 2026",
+  ],
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_TITLE,
+    images: [{ url: "/gallery/gallery-01.jpeg", width: 1280, height: 970 }],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ["/gallery/gallery-01.jpeg"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
