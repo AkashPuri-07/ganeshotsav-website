@@ -28,7 +28,7 @@ export default function Gallery() {
                   src={`/gallery/${photo}`}
                   alt="A moment from a past Ganeshotsav celebration"
                   loading="lazy"
-                  className="aspect-square w-full object-cover"
+                  className="block h-auto w-full"
                 />
               </div>
             ))}

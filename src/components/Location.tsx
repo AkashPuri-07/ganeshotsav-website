@@ -21,7 +21,7 @@ export default function Location() {
               Sarvajanik Shri Ganesh Utsav Mandal
             </p>
             <p className="mt-1 text-ink/80">
-              Hajjugiri, Bhagyanagar 1st Cross, Anagol, Belgaum &ndash; 590006
+              Hajjugiri, Bhagyanagar 1st Cross, Angol, Belgaum &ndash; 590006
             </p>
 
             <p className="mt-6 font-display text-lg text-vermilion">

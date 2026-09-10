@@ -10,7 +10,7 @@ export default function About() {
         <div className="mt-4 space-y-4 font-sans text-ink">
           <p>
             Sarvajanik Shri Ganesh Utsav Mandal has celebrated Ganeshotsav at
-            Hajjugiri, Bhagyanagar 1st Cross, Anagol, Belgaum since{" "}
+            Hajjugiri, Bhagyanagar 1st Cross, Angol, Belgaum since{" "}
             <strong>1978</strong>. 2026 marks our{" "}
             <strong>49th year</strong>.
           </p>

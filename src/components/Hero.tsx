@@ -15,7 +15,7 @@ export default function Hero() {
           </h1>
 
           <p className="font-sans text-lg text-ivory-warm">
-            Sarvajanik Shri Ganesh Utsav Mandal &middot; Anagol, Belgaum
+            Sarvajanik Shri Ganesh Utsav Mandal &middot; Angol, Belgaum
           </p>
 
           <p className="font-sans text-base font-semibold text-ivory">

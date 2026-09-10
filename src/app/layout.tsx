@@ -16,7 +16,7 @@ const karla = Karla({
 export const metadata: Metadata = {
   title: "Sarvajanik Shri Ganesh Utsav Mandal",
   description:
-    "Sarvajanik Shri Ganesh Utsav Mandal, Anagol, Belgaum — Ganeshotsav 2026",
+    "Sarvajanik Shri Ganesh Utsav Mandal, Angol, Belgaum — Ganeshotsav 2026",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
