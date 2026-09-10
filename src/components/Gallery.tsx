@@ -2,6 +2,10 @@ import { getGalleryPhotos } from "@/lib/content";
 
 const TILTS = ["-rotate-3", "rotate-2", "-rotate-2", "rotate-3", "rotate-1", "-rotate-1"];
 
+// Landscape-oriented photos render short next to portrait neighbors at the
+// same column width — span 2 columns so they read at a comparable size.
+const WIDE_PHOTOS = new Set(["gallery-01.jpeg"]);
+
 export default function Gallery() {
   const photos = getGalleryPhotos();
 
@@ -22,7 +26,7 @@ export default function Gallery() {
             {photos.map((photo, index) => (
               <div
                 key={photo}
-                className={`${TILTS[index % TILTS.length]} rounded-sm border-8 border-white bg-white shadow-md transition-transform duration-200 hover:z-10 hover:-translate-y-2 hover:rotate-0 hover:shadow-xl`}
+                className={`${TILTS[index % TILTS.length]} ${WIDE_PHOTOS.has(photo) ? "col-span-2" : ""} rounded-sm border-8 border-white bg-white shadow-md transition-transform duration-200 hover:z-10 hover:-translate-y-2 hover:rotate-0 hover:shadow-xl`}
               >
                 <img
                   src={`/gallery/${photo}`}
