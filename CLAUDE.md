@@ -10,6 +10,7 @@ These are standing rules for how Akash ("Akki") Puri wants to work on this proje
 - **Explain changes in plain English before making them.** Akki wants to understand *why*, not just see it done.
 - **Always ask before committing or pushing to GitHub.**
 - **Show results/preview before anything goes live.**
+- **Never delete files from disk (photos included) without asking first and getting an explicit yes.** If a photo shouldn't go on the site, leave it in place and just exclude it from the build — don't `rm` it. This applies even to files that aren't tracked in git yet, since those can't be recovered from git history.
 
 ## Environment
 
