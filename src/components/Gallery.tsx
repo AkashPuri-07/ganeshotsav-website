@@ -1,10 +1,52 @@
 import { getGalleryPhotos } from "@/lib/content";
 
-const TILTS = ["-rotate-3", "rotate-2", "-rotate-2", "rotate-3", "rotate-1", "-rotate-1"];
+function splitAlternate(items: string[]): [string[], string[]] {
+  const row1: string[] = [];
+  const row2: string[] = [];
+  items.forEach((item, index) => (index % 2 === 0 ? row1 : row2).push(item));
+  return [row1, row2];
+}
 
-// Landscape-oriented photos render short next to portrait neighbors at the
-// same column width — span 2 columns so they read at a comparable size.
-const WIDE_PHOTOS = new Set(["gallery-01.jpeg"]);
+// Keeps scroll speed feeling consistent regardless of how many photos are
+// in a row (more photos = longer track = needs more time for the same
+// visual speed).
+function durationFor(photoCount: number) {
+  return `${Math.max(20, photoCount * 4.5)}s`;
+}
+
+function MarqueeRow({
+  photos,
+  direction,
+}: {
+  photos: string[];
+  direction: "left" | "right";
+}) {
+  if (photos.length === 0) return null;
+  const doubled = [...photos, ...photos];
+
+  return (
+    <div className="marquee-viewport">
+      <div
+        className={`marquee-track marquee-track-${direction} flex gap-4`}
+        style={{ animationDuration: durationFor(photos.length) }}
+      >
+        {doubled.map((photo, index) => (
+          <div
+            key={`${photo}-${index}`}
+            className="flex h-[320px] shrink-0 rounded-md bg-white shadow-md"
+          >
+            <img
+              src={`/gallery/${photo}`}
+              alt="A moment from a past Ganeshotsav celebration"
+              loading="lazy"
+              className="h-full w-auto rounded-md"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Gallery() {
   const photos = getGalleryPhotos();
@@ -12,33 +54,29 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="scroll-mt-16 border-t border-gold bg-ivory px-6 py-16"
+      className="scroll-mt-16 overflow-hidden border-t border-gold bg-ivory py-16"
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-6xl px-6">
         <h2 className="font-display text-3xl text-vermilion">
           Moments we&apos;ve kept
         </h2>
-
-        {photos.length === 0 ? (
-          <p className="mt-4 font-sans text-ink/70">Coming soon.</p>
-        ) : (
-          <div className="mt-8 grid grid-cols-2 items-start gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
-            {photos.map((photo, index) => (
-              <div
-                key={photo}
-                className={`${TILTS[index % TILTS.length]} ${WIDE_PHOTOS.has(photo) ? "col-span-2" : ""} rounded-sm border-8 border-white bg-white shadow-md transition-transform duration-200 hover:z-10 hover:-translate-y-2 hover:rotate-0 hover:shadow-xl`}
-              >
-                <img
-                  src={`/gallery/${photo}`}
-                  alt="A moment from a past Ganeshotsav celebration"
-                  loading="lazy"
-                  className="block h-auto w-full"
-                />
-              </div>
-            ))}
-          </div>
-        )}
       </div>
+
+      {photos.length === 0 ? (
+        <p className="mt-4 px-6 font-sans text-ink/70">Coming soon.</p>
+      ) : (
+        <div className="mt-8 flex flex-col gap-4">
+          {(() => {
+            const [row1, row2] = splitAlternate(photos);
+            return (
+              <>
+                <MarqueeRow photos={row1} direction="left" />
+                <MarqueeRow photos={row2} direction="right" />
+              </>
+            );
+          })()}
+        </div>
+      )}
     </section>
   );
 }
