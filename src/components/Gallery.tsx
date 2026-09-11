@@ -1,4 +1,9 @@
+import Link from "next/link";
 import { getGalleryPhotos } from "@/lib/content";
+import galleryDimensions from "@/data/gallery-dimensions.json";
+
+type Dimensions = { width: number; height: number };
+const dimensions = galleryDimensions as Record<string, Dimensions>;
 
 function splitAlternate(items: string[]): [string[], string[]] {
   const row1: string[] = [];
@@ -30,19 +35,25 @@ function MarqueeRow({
         className={`marquee-track marquee-track-${direction} flex gap-4`}
         style={{ animationDuration: durationFor(photos.length) }}
       >
-        {doubled.map((photo, index) => (
-          <div
-            key={`${photo}-${index}`}
-            className="flex h-[320px] shrink-0 rounded-md bg-white shadow-md"
-          >
-            <img
-              src={`/gallery/${photo}`}
-              alt="A moment from a past Ganeshotsav celebration"
-              loading="lazy"
-              className="h-full w-auto rounded-md"
-            />
-          </div>
-        ))}
+        {doubled.map((photo, index) => {
+          const dims = dimensions[photo];
+          return (
+            <div
+              key={`${photo}-${index}`}
+              className="flex h-[320px] shrink-0 rounded-md bg-white shadow-md"
+            >
+              <img
+                src={`/gallery/${photo}`}
+                alt="A moment from a past Ganeshotsav celebration"
+                loading="lazy"
+                decoding="async"
+                width={dims?.width}
+                height={dims?.height}
+                className="h-full w-auto rounded-md"
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -56,10 +67,18 @@ export default function Gallery() {
       id="gallery"
       className="scroll-mt-16 overflow-hidden border-t border-gold bg-ivory py-16"
     >
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6">
         <h2 className="font-display text-3xl text-vermilion">
           Moments we&apos;ve kept
         </h2>
+        {photos.length > 0 && (
+          <Link
+            href="/gallery"
+            className="rounded-full bg-marigold px-5 py-2 font-sans text-sm font-semibold text-ivory transition-colors hover:bg-marigold-deep"
+          >
+            View full gallery &rarr;
+          </Link>
+        )}
       </div>
 
       {photos.length === 0 ? (
