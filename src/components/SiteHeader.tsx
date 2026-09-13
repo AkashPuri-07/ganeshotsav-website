@@ -3,6 +3,7 @@ const NAV_LINKS = [
   { href: "/#daily-updates", label: "Daily Updates" },
   { href: "/#gallery", label: "Gallery" },
   { href: "/#about", label: "About" },
+  { href: "/#schedule", label: "Schedule" },
   { href: "/#team", label: "Our Team" },
   { href: "/#sponsors", label: "Sponsors" },
   { href: "/#location", label: "Location" },

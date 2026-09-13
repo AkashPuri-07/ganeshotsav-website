@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import DailyUpdates from "@/components/DailyUpdates";
 import Gallery from "@/components/Gallery";
 import About from "@/components/About";
+import Schedule from "@/components/Schedule";
 import Team from "@/components/Team";
 import Sponsors from "@/components/Sponsors";
 import Location from "@/components/Location";
@@ -50,6 +51,7 @@ export default function Home() {
         <DailyUpdates />
         <Gallery />
         <About />
+        <Schedule />
         <Team />
         <Sponsors />
         <Location />

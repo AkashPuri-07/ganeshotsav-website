@@ -27,12 +27,13 @@ export default function Location() {
             <p className="mt-6 font-display text-lg text-vermilion">
               Aarti Timings
             </p>
-            <p className="mt-1 text-ink/70">To be announced.</p>
+            <p className="mt-1 text-ink/70">Morning: 8:00 AM &ndash; 9:00 AM</p>
+            <p className="text-ink/70">Evening: 8:00 PM &ndash; 9:00 PM</p>
 
             <p className="mt-6 font-display text-lg text-vermilion">
               Contact
             </p>
-            <p className="mt-1 text-ink/70">To be announced.</p>
+            <p className="mt-1 text-ink/70">9538609395 / 8050474062</p>
           </div>
 
           <div className="overflow-hidden rounded-lg border border-gold">

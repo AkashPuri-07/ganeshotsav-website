@@ -4,5 +4,6 @@
 // after, for the same video ID) — no extra logic needed here once it's set.
 export const liveAartiConfig = {
   youtubeVideoId: "",
-  aartiTimeText: "Aarti timings to be announced.",
+  aartiTimeText:
+    "Morning: 8:00 AM – 9:00 AM · Evening: 8:00 PM – 9:00 PM",
 };
