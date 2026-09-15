@@ -4,5 +4,6 @@
   "title": "Idol Arrival",
   "highlight": "Idol arrival",
   "writeup": "A short 2-3 line write-up about the day goes here.",
-  "photos": ["photo-1.jpg", "photo-2.jpg"]
+  "photos": ["photo-1.jpg", "photo-2.jpg"],
+  "youtubeUrl": ""
 }

@@ -8,6 +8,7 @@ export type DailyUpdate = {
   highlight: string;
   writeup: string;
   photos: string[];
+  youtubeUrl?: string;
 };
 
 const DAILY_UPDATES_DIR = path.join(
