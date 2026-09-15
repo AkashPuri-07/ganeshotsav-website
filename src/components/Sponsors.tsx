@@ -8,7 +8,7 @@ export default function Sponsors() {
     >
       <div className="mx-auto max-w-6xl">
         <h2 className="font-display text-3xl text-vermilion">
-          Business Sponsors
+          Featured Businesses
         </h2>
         <p className="mt-2 font-sans text-ink/70">
           With gratitude to the businesses and families of our community.
