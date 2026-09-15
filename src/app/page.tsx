@@ -29,6 +29,7 @@ const eventJsonLd = {
     priceCurrency: "INR",
     availability: "https://schema.org/InStock",
     url: "https://belgaumbhagyavidhata.com",
+    validFrom: "2026-09-14",
   },
   location: {
     "@type": "Place",
