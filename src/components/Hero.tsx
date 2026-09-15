@@ -38,12 +38,12 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="flex aspect-square w-full max-w-xs items-center justify-center rounded-lg border-2 border-dashed border-ivory/70 bg-ivory/10">
-          <p className="px-4 text-center font-sans text-sm text-ivory/80">
-            This year&apos;s Ganpati photo
-            <br />
-            (coming closer to Sept 14)
-          </p>
+        <div className="w-full max-w-md overflow-hidden rounded-lg border-2 border-ivory/70 shadow-lg md:shrink-0">
+          <img
+            src="/daily-updates/day-1/sthapana.jpg"
+            alt="This year's Ganpati idol"
+            className="block h-auto w-full"
+          />
         </div>
       </div>
     </section>
