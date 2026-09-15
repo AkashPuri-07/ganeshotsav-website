@@ -19,6 +19,17 @@ const eventJsonLd = {
   endDate: "2026-09-25",
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   eventStatus: "https://schema.org/EventScheduled",
+  image: [
+    "https://belgaumbhagyavidhata.com/daily-updates/day-1/sthapana.jpg",
+    "https://belgaumbhagyavidhata.com/gallery/gallery-01.jpeg",
+  ],
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "INR",
+    availability: "https://schema.org/InStock",
+    url: "https://belgaumbhagyavidhata.com",
+  },
   location: {
     "@type": "Place",
     name: "Sarvajanik Shri Ganesh Utsav Mandal",
