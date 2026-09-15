@@ -21,10 +21,23 @@ export default function Schedule() {
                   <strong className="text-vermilion">{item.date}</strong>
                   {" — "}
                   {item.event}
+                  {item.time && (
+                    <span className="text-ink/60"> ({item.time})</span>
+                  )}
                   {item.tbc && (
                     <span className="ml-2 rounded-full bg-marigold px-2 py-0.5 font-sans text-xs font-semibold text-ivory">
                       TBC
                     </span>
+                  )}
+                  {item.subEvents && (
+                    <ul className="mt-2 ml-1 space-y-1">
+                      {item.subEvents.map((sub) => (
+                        <li key={sub} className="flex gap-2 text-sm">
+                          <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-leaf" />
+                          {sub}
+                        </li>
+                      ))}
+                    </ul>
                   )}
                 </span>
               </li>
