@@ -10,5 +10,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 1,
     },
+    {
+      url: "https://belgaumbhagyavidhata.com/gallery",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
   ];
 }
