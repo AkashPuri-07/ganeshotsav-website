@@ -20,6 +20,11 @@ export default function CommunityContributors() {
             <li key={name}>{name}</li>
           ))}
         </ul>
+
+        <p className="mt-6 font-sans italic text-ink/60">
+          and many more members of our community, each contribution valued
+          and appreciated 🙏
+        </p>
       </div>
     </section>
   );
