@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
   },
+  verification: {
+    google: "V3TLiT_XbAeHJgKmjmvo0Q-o2oIvLgz9_hoQfRfDs9U",
+  },
   keywords: [
     "Bhagyavidhata",
     "Belgaum",
