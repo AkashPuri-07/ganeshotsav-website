@@ -5,7 +5,7 @@ const NAV_LINKS = [
   { href: "/#about", label: "About" },
   { href: "/#schedule", label: "Schedule" },
   { href: "/#team", label: "Our Team" },
-  { href: "/#sponsors", label: "Sponsors" },
+  { href: "/#sponsors", label: "Business Sponsors" },
   { href: "/#location", label: "Location" },
   { href: "/#live-aarti", label: "Live Aarti" },
 ];

@@ -1,0 +1,15 @@
+export const contributors: string[] = [
+  "Abhijit Anil Puri",
+  "Akash Gajanan Anandache",
+  "Abhishek Pravin Shinde",
+  "Chetan Ajarekar",
+  "Jogesh M. Nikal",
+  "Dattaji K. Shenavi",
+  "Ganesh Bhakta",
+  "Madhusudan Gurav",
+  "Ashish A. Chougule",
+  "Abhijit Ghorpade",
+  "Rakesh Mulgund",
+  "Daulat R. Patil",
+  "Vitthal Gavas",
+];

@@ -6,6 +6,7 @@ import About from "@/components/About";
 import Schedule from "@/components/Schedule";
 import Team from "@/components/Team";
 import Sponsors from "@/components/Sponsors";
+import CommunityContributors from "@/components/CommunityContributors";
 import Location from "@/components/Location";
 import LiveAarti from "@/components/LiveAarti";
 
@@ -66,6 +67,7 @@ export default function Home() {
         <Schedule />
         <Team />
         <Sponsors />
+        <CommunityContributors />
         <Location />
         <LiveAarti />
       </main>
