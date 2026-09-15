@@ -18,7 +18,6 @@ export const scheduleEvents: ScheduleEvent[] = [
     event: "Dance Competition",
     time: "7:00 PM – 9:00 PM",
   },
-  { date: "Sept 19 or 20", event: "Fancy Dress Competition", tbc: true },
   {
     date: "Sept 20",
     event: "Sports",
