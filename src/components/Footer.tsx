@@ -5,9 +5,6 @@ export default function Footer() {
         © 2026 Belgaum cha Bhagyavidhata · Official website of Sarvajanik Shri
         Ganesh Utsav Mandal, Bhagyanagar 🙏
       </p>
-      <p className="mt-1 font-sans text-xs text-ink/50">
-        Initiated & built by Akash Puri
-      </p>
     </footer>
   );
 }
