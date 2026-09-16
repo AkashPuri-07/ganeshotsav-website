@@ -9,6 +9,7 @@ import Sponsors from "@/components/Sponsors";
 import CommunityContributors from "@/components/CommunityContributors";
 import Location from "@/components/Location";
 import LiveAarti from "@/components/LiveAarti";
+import Footer from "@/components/Footer";
 
 const eventJsonLd = {
   "@context": "https://schema.org",
@@ -71,6 +72,7 @@ export default function Home() {
         <Location />
         <LiveAarti />
       </main>
+      <Footer />
     </>
   );
 }
