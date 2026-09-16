@@ -33,7 +33,7 @@ export default function Location() {
             <p className="mt-6 font-display text-lg text-vermilion">
               Contact
             </p>
-            <p className="mt-1 text-ink/70">9538609395 / 8050474062</p>
+            <p className="mt-1 text-ink/70">9538609395 / 9860415060</p>
           </div>
 
           <div className="overflow-hidden rounded-lg border border-gold">
