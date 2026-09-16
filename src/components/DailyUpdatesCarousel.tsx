@@ -3,6 +3,43 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { DailyUpdate } from "@/lib/content";
 
+function DayPhotos({
+  photos,
+  dayLabel,
+  basePath,
+}: {
+  photos: string[];
+  dayLabel: string;
+  basePath: string;
+}) {
+  const imgClass = "h-full w-full min-h-0 object-contain rounded";
+
+  if (photos.length === 1) {
+    return (
+      <img
+        src={`${basePath}/${photos[0]}`}
+        alt={dayLabel}
+        loading="lazy"
+        className={imgClass}
+      />
+    );
+  }
+
+  return (
+    <div className="flex h-full min-h-0 flex-col gap-2">
+      {photos.map((photo) => (
+        <img
+          key={photo}
+          src={`${basePath}/${photo}`}
+          alt={dayLabel}
+          loading="lazy"
+          className={`min-h-0 flex-1 ${imgClass}`}
+        />
+      ))}
+    </div>
+  );
+}
+
 export default function DailyUpdatesCarousel({
   updates,
 }: {
@@ -49,7 +86,7 @@ export default function DailyUpdatesCarousel({
           <article
             key={update.day}
             data-day-card
-            className="w-[85vw] shrink-0 snap-start rounded-lg border border-gold bg-ivory-warm p-6 sm:w-[420px]"
+            className="flex h-[560px] w-[85vw] shrink-0 snap-start flex-col rounded-lg border border-gold bg-ivory-warm p-6 sm:h-[620px] sm:w-[420px]"
           >
             <div className="flex flex-wrap items-center gap-3">
               <span className="font-display text-xl text-vermilion">
@@ -67,16 +104,12 @@ export default function DailyUpdatesCarousel({
             </p>
             <p className="mt-3 font-sans text-ink">{update.writeup}</p>
             {update.photos.length > 0 && (
-              <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
-                {update.photos.map((photo) => (
-                  <img
-                    key={photo}
-                    src={`/daily-updates/day-${update.day}/${photo}`}
-                    alt={`${update.title} — Day ${update.day}`}
-                    loading="lazy"
-                    className="aspect-square w-full rounded object-cover"
-                  />
-                ))}
+              <div className="mt-4 min-h-0 flex-1">
+                <DayPhotos
+                  photos={update.photos}
+                  dayLabel={`${update.title} — Day ${update.day}`}
+                  basePath={`/daily-updates/day-${update.day}`}
+                />
               </div>
             )}
             {update.youtubeUrl && (
