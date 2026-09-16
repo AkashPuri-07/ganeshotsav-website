@@ -42,7 +42,13 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_TITLE,
-    images: [{ url: "/gallery/gallery-01.jpeg", width: 1280, height: 970 }],
+    images: [
+      {
+        url: "/daily-updates/day-1/sthapana.jpg",
+        width: 1200,
+        height: 1600,
+      },
+    ],
     locale: "en_IN",
     type: "website",
   },
@@ -50,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    images: ["/gallery/gallery-01.jpeg"],
+    images: ["/daily-updates/day-1/sthapana.jpg"],
   },
 };
 

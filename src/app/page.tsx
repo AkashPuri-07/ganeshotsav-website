@@ -21,10 +21,7 @@ const eventJsonLd = {
   endDate: "2026-09-25",
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   eventStatus: "https://schema.org/EventScheduled",
-  image: [
-    "https://belgaumbhagyavidhata.com/daily-updates/day-1/sthapana.jpg",
-    "https://belgaumbhagyavidhata.com/gallery/gallery-01.jpeg",
-  ],
+  image: ["https://belgaumbhagyavidhata.com/daily-updates/day-1/sthapana.jpg"],
   offers: {
     "@type": "Offer",
     price: "0",
