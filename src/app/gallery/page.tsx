@@ -3,9 +3,11 @@ import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import { getGalleryPhotos } from "@/lib/content";
 import galleryDimensions from "@/data/gallery-dimensions.json";
+import galleryAlt from "@/data/gallery-alt.json";
 
 type Dimensions = { width: number; height: number };
 const dimensions = galleryDimensions as Record<string, Dimensions>;
+const altText = galleryAlt as Record<string, string>;
 
 export const metadata: Metadata = {
   title: "Full Gallery — Sarvajanik Shri Ganesh Utsav Mandal",
@@ -45,7 +47,10 @@ export default function GalleryPage() {
                   <img
                     key={photo}
                     src={`/gallery/${photo}`}
-                    alt="A moment from a past Ganeshotsav celebration"
+                    alt={
+                      altText[photo] ??
+                      "A moment from a past Ganeshotsav celebration"
+                    }
                     loading="lazy"
                     decoding="async"
                     width={dims?.width}

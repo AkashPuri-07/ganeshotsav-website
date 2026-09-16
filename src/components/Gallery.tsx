@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { getGalleryPhotos } from "@/lib/content";
 import galleryDimensions from "@/data/gallery-dimensions.json";
+import galleryAlt from "@/data/gallery-alt.json";
 
 type Dimensions = { width: number; height: number };
 const dimensions = galleryDimensions as Record<string, Dimensions>;
+const altText = galleryAlt as Record<string, string>;
 
 function splitAlternate(items: string[]): [string[], string[]] {
   const row1: string[] = [];
@@ -44,7 +46,9 @@ function MarqueeRow({
             >
               <img
                 src={`/gallery/${photo}`}
-                alt="A moment from a past Ganeshotsav celebration"
+                alt={
+                  altText[photo] ?? "A moment from a past Ganeshotsav celebration"
+                }
                 loading="lazy"
                 decoding="async"
                 width={dims?.width}
