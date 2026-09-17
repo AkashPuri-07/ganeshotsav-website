@@ -7,7 +7,7 @@ export type ScheduleEvent = {
 };
 
 export const scheduleEvents: ScheduleEvent[] = [
-  { date: "Sept 17 & 24", event: "Mahaarti" },
+  { date: "Sept 17 & 24", event: "Mahaarti", time: "7:00 PM onwards" },
   {
     date: "Sept 19",
     event: "Drawing Competition",
