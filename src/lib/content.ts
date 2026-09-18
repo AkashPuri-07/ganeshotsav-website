@@ -43,5 +43,6 @@ export function getGalleryPhotos(): string[] {
   return fs
     .readdirSync(GALLERY_DIR)
     .filter((file) => IMAGE_EXTENSIONS.test(file))
-    .sort();
+    .sort()
+    .reverse();
 }
