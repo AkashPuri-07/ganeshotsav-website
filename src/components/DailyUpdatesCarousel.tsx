@@ -7,10 +7,12 @@ function DayPhotos({
   photos,
   dayLabel,
   basePath,
+  sideBySide,
 }: {
   photos: string[];
   dayLabel: string;
   basePath: string;
+  sideBySide?: boolean;
 }) {
   const imgClass = "h-full w-full min-h-0 object-contain rounded";
 
@@ -26,7 +28,9 @@ function DayPhotos({
   }
 
   return (
-    <div className="flex h-full min-h-0 flex-col gap-2">
+    <div
+      className={`flex h-full min-h-0 gap-2 ${sideBySide ? "flex-row" : "flex-col"}`}
+    >
       {photos.map((photo) => (
         <img
           key={photo}
@@ -109,6 +113,7 @@ export default function DailyUpdatesCarousel({
                   photos={update.photos}
                   dayLabel={`${update.title} — Day ${update.day}`}
                   basePath={`/daily-updates/day-${update.day}`}
+                  sideBySide={update.layout === "side-by-side"}
                 />
               </div>
             )}

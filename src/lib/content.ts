@@ -8,6 +8,7 @@ export type DailyUpdate = {
   highlight: string;
   writeup: string;
   photos: string[];
+  layout?: "side-by-side";
   youtubeUrl?: string;
 };
 
