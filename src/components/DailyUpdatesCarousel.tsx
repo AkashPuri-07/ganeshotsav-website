@@ -22,14 +22,14 @@ function DayPhotos({
         src={`${basePath}/${photos[0]}`}
         alt={dayLabel}
         loading="lazy"
-        className={imgClass}
+        className={`absolute inset-0 ${imgClass}`}
       />
     );
   }
 
   return (
     <div
-      className={`flex h-full min-h-0 gap-2 ${sideBySide ? "flex-row" : "flex-col"}`}
+      className={`absolute inset-0 flex min-h-0 gap-2 ${sideBySide ? "flex-row" : "flex-col"}`}
     >
       {photos.map((photo) => (
         <img
@@ -90,7 +90,7 @@ export default function DailyUpdatesCarousel({
           <article
             key={update.day}
             data-day-card
-            className="flex h-[560px] w-[85vw] shrink-0 snap-start flex-col rounded-lg border border-gold bg-ivory-warm p-6 sm:h-[620px] sm:w-[420px]"
+            className="flex min-h-[560px] w-[85vw] shrink-0 snap-start flex-col rounded-lg border border-gold bg-ivory-warm p-6 sm:h-[620px] sm:w-[420px]"
           >
             <div className="flex flex-wrap items-center gap-3">
               <span className="font-display text-xl text-vermilion">
@@ -108,7 +108,7 @@ export default function DailyUpdatesCarousel({
             </p>
             <p className="mt-3 font-sans text-ink">{update.writeup}</p>
             {update.photos.length > 0 && (
-              <div className="mt-4 min-h-0 flex-1">
+              <div className="relative mt-4 min-h-[288px] flex-1 sm:min-h-0">
                 <DayPhotos
                   photos={update.photos}
                   dayLabel={`${update.title} — Day ${update.day}`}
@@ -117,15 +117,31 @@ export default function DailyUpdatesCarousel({
                 />
               </div>
             )}
-            {update.youtubeUrl && (
-              <a
-                href={update.youtubeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block rounded-full bg-vermilion px-5 py-2 font-sans text-sm font-semibold text-ivory transition-colors hover:bg-marigold"
-              >
-                ▶ Watch on YouTube
-              </a>
+            {update.videos && update.videos.length > 0 ? (
+              <div className="mt-4 flex flex-col gap-2 sm:flex-row">
+                {update.videos.map((video) => (
+                  <a
+                    key={video.url}
+                    href={video.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 rounded-full bg-vermilion px-3 py-2 text-center font-sans text-sm font-semibold text-ivory transition-colors hover:bg-marigold"
+                  >
+                    ▶ {video.label}
+                  </a>
+                ))}
+              </div>
+            ) : (
+              update.youtubeUrl && (
+                <a
+                  href={update.youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block rounded-full bg-vermilion px-5 py-2 font-sans text-sm font-semibold text-ivory transition-colors hover:bg-marigold"
+                >
+                  ▶ Watch on YouTube
+                </a>
+              )
             )}
           </article>
         ))}

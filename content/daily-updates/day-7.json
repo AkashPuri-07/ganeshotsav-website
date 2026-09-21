@@ -6,5 +6,8 @@
   "writeup": "The morning belonged to Bappa's little champions! Kids from the galli battled it out in Running Race, Lemon Spoon, Balloon Jump and a surprise game — pure energy, laughter and community spirit filled the streets. As evening fell, the mood turned devotional with a sacred Gana Homa and Satyanarayan Pooja, the mandap filling with chants and rising smoke as the community gathered in prayer. A full day of celebration, from playful mornings to peaceful evenings. 🙏",
   "photos": ["day7-sports-running.jpg", "day7-ganahoma.jpg"],
   "layout": "side-by-side",
-  "youtubeUrl": "https://youtube.com/shorts/TYJ2ZZrW16c"
+  "videos": [
+    { "label": "Watch Sports Day", "url": "https://youtube.com/shorts/TYJ2ZZrW16c" },
+    { "label": "Watch Gana Homa", "url": "https://youtube.com/shorts/OEuTBwnVN6c" }
+  ]
 }

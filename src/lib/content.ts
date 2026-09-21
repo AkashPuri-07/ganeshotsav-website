@@ -10,6 +10,7 @@ export type DailyUpdate = {
   photos: string[];
   layout?: "side-by-side";
   youtubeUrl?: string;
+  videos?: { label: string; url: string }[];
 };
 
 const DAILY_UPDATES_DIR = path.join(
