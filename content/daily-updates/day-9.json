@@ -1,0 +1,13 @@
+{
+  "day": 9,
+  "date": "2026-09-22",
+  "title": "Mahila Mandal Bhajans & A Special Guest",
+  "highlight": "Bhajans & Felicitation",
+  "writeup": "Today's aarti carried an extra dose of warmth — our Mahila Mandal came together for a beautiful round of bhajans, their voices filling the mandap with devotion. We were also honored to welcome Corporator Shri Abhijit Jawalkar to the pandal, and the galli came together to felicitate him for gracing our Ganeshotsav. A day of music, community, and gratitude. 🙏",
+  "photos": ["day9-bhajan.jpg", "day9-corporator.jpg"],
+  "layout": "side-by-side",
+  "videos": [
+    { "label": "Watch Bhajans", "url": "https://www.youtube.com/shorts/1fYcCZXiDOg" },
+    { "label": "Watch Felicitation", "url": "https://www.youtube.com/shorts/f9oyH0xbCyc" }
+  ]
+}
