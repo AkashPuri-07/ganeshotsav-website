@@ -37,7 +37,7 @@ function DayPhotos({
           src={`${basePath}/${photo}`}
           alt={dayLabel}
           loading="lazy"
-          className={`min-h-0 flex-1 max-sm:min-w-0 ${imgClass}`}
+          className={`min-h-0 min-w-0 flex-1 ${imgClass}`}
         />
       ))}
     </div>
