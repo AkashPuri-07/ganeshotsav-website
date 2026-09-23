@@ -4,5 +4,8 @@
   "title": "A Quiet Morning with Bappa",
   "highlight": "Morning aarti",
   "writeup": "Some mornings it's just you and Bappa — and that's its own kind of beautiful. A quiet, solitary aarti today, no crowd, no noise, just a moment of pure devotion at the pandal. These are the mornings that remind you why this festival means so much. 🙏",
-  "photos": ["day10-morning-aarti-2.jpg"]
+  "photos": ["day10-morning-aarti-2.jpg"],
+  "videos": [
+    { "label": "View on Instagram", "url": "https://www.instagram.com/p/DdnqjBXPGBH/", "icon": "📷" }
+  ]
 }

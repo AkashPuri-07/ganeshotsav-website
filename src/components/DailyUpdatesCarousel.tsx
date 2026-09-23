@@ -127,7 +127,7 @@ export default function DailyUpdatesCarousel({
                     rel="noopener noreferrer"
                     className="flex-1 rounded-full bg-vermilion px-3 py-2 text-center font-sans text-sm font-semibold text-ivory transition-colors hover:bg-marigold"
                   >
-                    ▶ {video.label}
+                    {video.icon ?? "▶"} {video.label}
                   </a>
                 ))}
               </div>
