@@ -10,6 +10,7 @@ export type DailyUpdate = {
   photos: string[];
   layout?: "side-by-side";
   youtubeUrl?: string;
+  youtubeLabel?: string;
   videos?: { label: string; url: string; icon?: string }[];
 };
 

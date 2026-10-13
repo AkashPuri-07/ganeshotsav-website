@@ -139,7 +139,7 @@ export default function DailyUpdatesCarousel({
                   rel="noopener noreferrer"
                   className="mt-4 inline-block rounded-full bg-vermilion px-5 py-2 font-sans text-sm font-semibold text-ivory transition-colors hover:bg-marigold"
                 >
-                  ▶ Watch on YouTube
+                  ▶ {update.youtubeLabel ?? "Watch on YouTube"}
                 </a>
               )
             )}

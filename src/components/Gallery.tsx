@@ -2,8 +2,29 @@ import Link from "next/link";
 import { getGalleryPhotos } from "@/lib/content";
 import GalleryMarquee from "@/components/GalleryMarquee";
 
+// The strip is capped (it renders every photo twice on desktop, which hurts
+// mobile performance). The full list lives on /gallery. Photos numbered from
+// FIRST_PHOTO_OF_LATEST_BATCH up are the newest batch (Day 12, 2026).
+const FIRST_PHOTO_OF_LATEST_BATCH = 37;
+const STRIP_FROM_LATEST_BATCH = 12;
+const STRIP_FROM_OLDER = 24;
+
+function photoNumber(photo: string) {
+  return Number(photo.match(/(\d+)/)?.[1] ?? 0);
+}
+
 export default function Gallery() {
-  const photos = getGalleryPhotos();
+  const allPhotos = getGalleryPhotos();
+  const latest = allPhotos.filter(
+    (p) => photoNumber(p) >= FIRST_PHOTO_OF_LATEST_BATCH,
+  );
+  const older = allPhotos.filter(
+    (p) => photoNumber(p) < FIRST_PHOTO_OF_LATEST_BATCH,
+  );
+  const photos = [
+    ...latest.slice(0, STRIP_FROM_LATEST_BATCH),
+    ...older.slice(0, STRIP_FROM_OLDER),
+  ];
 
   return (
     <section
