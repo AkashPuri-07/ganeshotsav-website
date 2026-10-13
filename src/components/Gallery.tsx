@@ -6,11 +6,29 @@ import GalleryMarquee from "@/components/GalleryMarquee";
 // mobile performance). The full list lives on /gallery. Photos numbered from
 // FIRST_PHOTO_OF_LATEST_BATCH up are the newest batch (Day 12, 2026).
 const FIRST_PHOTO_OF_LATEST_BATCH = 37;
-const STRIP_FROM_LATEST_BATCH = 8;
-const STRIP_FROM_OLDER = 28;
+const STRIP_FROM_LATEST_BATCH = 2;
+const STRIP_FROM_OLDER = 34;
 
 function photoNumber(photo: string) {
   return Number(photo.match(/(\d+)/)?.[1] ?? 0);
+}
+
+// Spreads the newest photos evenly through the strip, starting with one at
+// position 0, instead of bunching them all at the front.
+function interleave(newer: string[], older: string[]): string[] {
+  const total = newer.length + older.length;
+  const result: string[] = [];
+  let n = 0;
+  let o = 0;
+  for (let i = 0; i < total; i++) {
+    const nextNewSlot = Math.floor((n * total) / newer.length);
+    if (n < newer.length && i >= nextNewSlot) {
+      result.push(newer[n++]);
+    } else {
+      result.push(older[o++]);
+    }
+  }
+  return result;
 }
 
 export default function Gallery() {
@@ -21,10 +39,10 @@ export default function Gallery() {
   const older = allPhotos.filter(
     (p) => photoNumber(p) < FIRST_PHOTO_OF_LATEST_BATCH,
   );
-  const photos = [
-    ...latest.slice(0, STRIP_FROM_LATEST_BATCH),
-    ...older.slice(0, STRIP_FROM_OLDER),
-  ];
+  const photos = interleave(
+    latest.slice(0, STRIP_FROM_LATEST_BATCH),
+    older.slice(0, STRIP_FROM_OLDER),
+  );
 
   return (
     <section
